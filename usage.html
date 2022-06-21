@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="usage.html" class="active"><strong aria-hidden="true">3.</strong> Usage</a></li><li class="chapter-item expanded "><a href="favorites.html"><strong aria-hidden="true">4.</strong> Favorites</a></li><li class="chapter-item expanded "><a href="templates/index.html"><strong aria-hidden="true">5.</strong> Templates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="templates/placeholders.html"><strong aria-hidden="true">5.1.</strong> Placeholders</a></li><li class="chapter-item expanded "><a href="templates/ignoring.html"><strong aria-hidden="true">5.2.</strong> Ignoring Files</a></li><li class="chapter-item expanded "><a href="templates/include_exclude.html"><strong aria-hidden="true">5.3.</strong> Include/Exclude</a></li><li class="chapter-item expanded "><a href="templates/require_version.html"><strong aria-hidden="true">5.4.</strong> Require Version</a></li><li class="chapter-item expanded "><a href="templates/conditional.html"><strong aria-hidden="true">5.5.</strong> Conditionals</a></li><li class="chapter-item expanded "><a href="templates/scripting.html"><strong aria-hidden="true">5.6.</strong> Pre/Post Scripts</a></li><li class="chapter-item expanded "><a href="templates/authoring.html"><strong aria-hidden="true">5.7.</strong> Authoring</a></li></ol></li><li class="chapter-item expanded "><a href="contributing.html"><strong aria-hidden="true">6.</strong> Contributing</a></li><li class="chapter-item expanded "><a href="license.html"><strong aria-hidden="true">7.</strong> License</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="usage.html" class="active"><strong aria-hidden="true">3.</strong> Usage</a></li><li class="chapter-item expanded "><a href="favorites.html"><strong aria-hidden="true">4.</strong> Favorites</a></li><li class="chapter-item expanded "><a href="templates/index.html"><strong aria-hidden="true">5.</strong> Templates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="templates/builtin_placeholders.html"><strong aria-hidden="true">5.1.</strong> Builtin Placeholders</a></li><li class="chapter-item expanded "><a href="templates/custom_placeholders.html"><strong aria-hidden="true">5.2.</strong> Custom Placeholders</a></li><li class="chapter-item expanded "><a href="templates/ignoring.html"><strong aria-hidden="true">5.3.</strong> Ignoring Files</a></li><li class="chapter-item expanded "><a href="templates/include_exclude.html"><strong aria-hidden="true">5.4.</strong> Include/Exclude</a></li><li class="chapter-item expanded "><a href="templates/require_version.html"><strong aria-hidden="true">5.5.</strong> Require Version</a></li><li class="chapter-item expanded "><a href="templates/conditional.html"><strong aria-hidden="true">5.6.</strong> Conditionals</a></li><li class="chapter-item expanded "><a href="templates/scripting.html"><strong aria-hidden="true">5.7.</strong> Pre/Post Scripts</a></li><li class="chapter-item expanded "><a href="templates/authoring.html"><strong aria-hidden="true">5.8.</strong> Authoring</a></li></ol></li><li class="chapter-item expanded "><a href="contributing.html"><strong aria-hidden="true">6.</strong> Contributing</a></li><li class="chapter-item expanded "><a href="license.html"><strong aria-hidden="true">7.</strong> License</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -164,17 +164,17 @@ cargo generate gh:username-on-github/mytemplate
 <pre><code class="language-sh">cargo generate --git https://github.com/username-on-github/mytemplate.git --name myproject
 </code></pre>
 <h2 id="templates-in-subfolders"><a class="header" href="#templates-in-subfolders">Templates in subfolders</a></h2>
-<p>If the git repository contains multiple templates, the specific subfolder in the git repository may be specified like this:</p>
+<p>If the git repository contains multiple templates, the specific sub-folder in the git repository may be specified like this:</p>
 <pre><code class="language-sh">cargo generate --git https://github.com/username-on-github/mytemplate.git &lt;relative-template-path&gt;
 </code></pre>
 <blockquote>
-<p>⚠️ NOTE: The specified <code>relative-template-path</code> will be used as the actual template root, whether or not this is actually true!</p>
+<p>⚠️ NOTE: The specified <code>relative-template-path</code> will be used as the actual template root, whether this is actually true!</p>
 </blockquote>
 <blockquote>
-<p>⚠️ NOTE: When using the <code>subfolder</code> feature, <code>cargo-generate</code> will search for the <code>cargo-generate.toml</code> file in the subfolder first, traversing back towards the template root in case it is not found.</p>
+<p>⚠️ NOTE: When using the <code>subfolder</code> feature, <code>cargo-generate</code> will search for the <code>cargo-generate.toml</code> file in the sub-folder first, traversing back towards the template root in case it is not found.</p>
 </blockquote>
 <h2 id="generating-into-current-dir"><a class="header" href="#generating-into-current-dir">Generating into current dir</a></h2>
-<p>If the user wants to generate a template straight into the current folder, without creating a subfolder for the contents and without attempting to initialize a <code>.git</code> repo or similar, the <code>--init</code> flag can be used.</p>
+<p>If the user wants to generate a template straight into the current folder, without creating a sub-folder for the contents and without attempting to initialize a <code>.git</code> repo or similar, the <code>--init</code> flag can be used.</p>
 <pre><code class="language-sh">cargo generate --init --git https://github.com/username-on-github/mytemplate.git
 </code></pre>
 <blockquote>
@@ -188,7 +188,7 @@ cargo generate --path $HOME/mytemplate # Use it locally
 <blockquote>
 <p>⚠️ NOTE: <code>cargo-generate</code> will not allow to use the association <code>--path</code> and <code>--git</code> flags.</p>
 </blockquote>
-<h2 id="git-over-ssh"><a class="header" href="#git-over-ssh">git over ssh</a></h2>
+<h3 id="git-over-ssh"><a class="header" href="#git-over-ssh">git over ssh</a></h3>
 <p>New in version <a href="https://github.com/cargo-generate/cargo-generate/releases/tag/v0.7.0">0.7.0</a> is the support for both public and private and ssh git remote urls.
 For example:</p>
 <pre><code class="language-sh">cargo generate --git git@github.com:rustwasm/wasm-pack-template.git --name mywasm
@@ -197,11 +197,20 @@ For example:</p>
 <pre><code class="language-sh">cargo generate --git https://github.com/rustwasm/wasm-pack-template.git --name mywasm
 </code></pre>
 <p>as well as:</p>
-<pre><code class="language-sh">cargo generate --git rustwasm/wasm-pack-template --name mywasm
+<pre><code class="language-sh">cargo generate rustwasm/wasm-pack-template --name mywasm
 </code></pre>
-<h2 id="ssh-identity-file-private-key"><a class="header" href="#ssh-identity-file-private-key">ssh identity file (private key)</a></h2>
-<p>the default ssh identity is that is used is the good old RSA one. <code>~/.ssh/id_rsa</code>.</p>
+<h3 id="authentication-using-ssh-agent"><a class="header" href="#authentication-using-ssh-agent">authentication using <code>ssh-agent</code></a></h3>
+<p>New in version <a href="https://github.com/cargo-generate/cargo-generate/releases/tag/v0.15.1">0.15.1</a> is the <code>ssh-agent</code> usage for password protected keys. It's also the default mechanism on Windows.</p>
+<h4 id="on-windows"><a class="header" href="#on-windows">On Windows</a></h4>
+<p><code>ssh-agent</code> is the default and also <strong>the only</strong> possibility to get git+ssh working.
+Please follow <a href="https://github.com/cargo-generate/cargo-generate/discussions/653">this guide</a> to get <code>ssh-agent</code> configured on windows.</p>
+<h4 id="on-nix-and-macos"><a class="header" href="#on-nix-and-macos">On *Nix and macOS</a></h4>
+<p>If you omit the identity file (read the next paragraph) <strong>OR</strong> a provided identity file does not exist, then the default is to use <code>ssh-agent</code>.</p>
+<h3 id="ssh-identity-file-private-key"><a class="header" href="#ssh-identity-file-private-key">ssh identity file (private key)</a></h3>
 <p>However, if you use a different file, you can pass a custom ssh identity with via <code>-i | --identity</code> like <code>-i ~/.ssh/id_rsa_other</code> as argument.</p>
+<blockquote>
+<p>⚠️ NOTE: password protected private keys are <strong>NOT</strong> supported, you have to use <code>ssh-agent</code> and omit the <code>-i</code> argument (see above). </p>
+</blockquote>
 <p>If you permanently want to use a custom identity file, you can configure it in the cargo-generate config file like this:</p>
 <pre><code class="language-toml"># an extract of ~/.cargo/cargo-generate.toml
 [defaults]
